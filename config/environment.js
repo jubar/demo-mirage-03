@@ -3,6 +3,7 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'demo-mirage',
+    podModulePrefix: 'demo-mirage/pods',
     environment: environment,
     rootURL: '/',
     locationType: 'auto',

@@ -1,0 +1,29 @@
+<h1>
+  {{model.name}}
+  <small>
+    <strong>Address:</strong> {{model.address}}
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+    <strong>Email:</strong> {{model.email}}
+  </small>
+</h1>
+
+
+<h2>{{model.employees.length}} Employees</h2>
+
+<div class="employee-list">
+  {{#each model.employees as |employee|}}
+    {{#if employee.isLoading}}
+      Loading...
+    {{else}}
+      {{#link-to "companies.detail.employee" employee}}
+        {{employee.completeName}}
+      {{/link-to}}
+    {{/if}}
+  {{else}}
+    <div class="block">
+      There are no employees in the company
+    </div>
+  {{/each}}
+</div>
+
+{{outlet}}

@@ -1,0 +1,17 @@
+<aside>
+  <h1>
+    Companies
+    <small>
+      {{model.length}} companies are registered
+    </small>
+  </h1>
+  {{#each model as |company|}}
+    {{#link-to "companies.detail" company.id class="block"}}
+      {{company.name}}
+    {{/link-to}}
+  {{/each}}
+</aside>
+
+<div class="company-detail">
+  {{outlet}}
+</div>

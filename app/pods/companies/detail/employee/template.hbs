@@ -1,0 +1,20 @@
+<h2>{{model.completeName}}</h2>
+
+<div class="employee">
+  <div class="photo">
+    <img src="{{model.avatar}}">
+  </div>
+  <div class="info">
+    <span class="block">First name: {{model.firstName}}</span>
+    <span class="block">Last name: {{model.lastName}}</span>
+    <span class="block">Email: {{model.email}}</span>
+
+    <hr>
+
+    {{#each model.technologies as |technology|}}
+      <span class="tag {{technology.name}}">
+        {{technology.name}}
+      </span>
+    {{/each}}
+  </div>
+</div>
